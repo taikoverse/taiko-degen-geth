@@ -1367,7 +1367,8 @@ func (pool *TxPool) reset(oldHead, newHead *types.Header) {
 	// CHANGE(taiko): current gas limit for transaction caps is always
 	// LibSharedConfig.blockMaxGasLimit defined in protocol.
 	if pool.chainconfig.Taiko {
-		pool.currentMaxGas = 6000000 // LibSharedConfig.blockMaxGasLimit
+		// pool.currentMaxGas = 6000000 // LibSharedConfig.blockMaxGasLimit
+		pool.currentMaxGas = 300000000 // LibSharedConfig.blockMaxGasLimit
 	} else {
 		pool.currentMaxGas = newHead.GasLimit
 	}
